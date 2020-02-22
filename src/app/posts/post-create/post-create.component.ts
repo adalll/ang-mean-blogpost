@@ -65,6 +65,7 @@ export class PostCreateComponent implements OnInit, OnDestroy {
             content: this.post.content,
             image: this.post.imagePath
           });
+          this.imagePreview = postData.imagePath;
         });
       } else {
         this.mode = "create";

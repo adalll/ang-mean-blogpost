@@ -58,11 +58,10 @@ exports.getPosts = (req, res, next) => {
       .skip(pageSize * (currentPage - 1))
       .limit(pageSize)
   }
-
   postQuery
     .then(documents => {
       fetchedPosts = documents;
-      return Post.count();
+      return Post.countDocuments();
     })
     .then(count => {
       res.status(200).json(
